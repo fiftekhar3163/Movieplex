@@ -14,13 +14,14 @@ body {
 
 h1 {
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 input[type="text"] {
   width: 100%;
   padding: 10px;
-  margin-top: 10px;
   font-size: 16px;
+  border-radius: 5px 0 0 5px;
 }
 
 .search-container {
@@ -38,6 +39,7 @@ input[type="text"] {
   border: none;
   color: white;
   cursor: pointer;
+  border-radius: 0 5px 5px 0;
 }
 
 .autocomplete-results {

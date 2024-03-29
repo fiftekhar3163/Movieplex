@@ -30,7 +30,10 @@
   <div class="container">
     <h1>Movie Search</h1>
     <div class="search-container">
-        <input type="text" id="searchInput" placeholder="Search for a movie...">
+        <input type="text" id="searchInput" list="movieTitles" placeholder="Search for a movie...">
+        <datalist id="movieTitles">
+          <!-- Movies will be dynamically added here -->
+      </datalist>
         <button id="searchButton">Search</button>
     </div>
     <div id="autocompleteResults" class="autocomplete-results"></div>

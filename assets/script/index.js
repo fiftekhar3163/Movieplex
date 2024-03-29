@@ -27,18 +27,35 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function displayAutocompleteResults(matchedMovies) {
-    autocompleteResults.innerHTML = "";
+    const datalist = document.getElementById("movieTitles");
+    datalist.innerHTML = "";
     matchedMovies.forEach((movie) => {
-      const movieOption = document.createElement("div");
-      movieOption.classList.add("autocomplete-option");
-      movieOption.textContent = movie.title;
-      movieOption.addEventListener("click", function () {
+      const option = document.createElement("option");
+      option.value = movie.title;
+      if (movie.title.toLowerCase() !== searchInput.value.toLowerCase()) {
+        datalist.appendChild(option);
+      }
+      searchButton.addEventListener("click", function () {
         displayMovieDetails(movie);
       });
-      autocompleteResults.appendChild(movieOption);
+      searchInput.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          displayMovieDetails(movie);
+        }
+      });
+      window.addEventListener(
+        "input",
+        function (e) {
+          let event = e.inputType ? "input" : "datalist";
+
+          if (event === "datalist") {
+            displayMovieDetails(movie);
+          }
+        },
+        false
+      );
     });
   }
-
   function displayMovieDetails(movie) {
     movieDetails.innerHTML = `
             <div class="movie-details-container">
@@ -54,5 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
             </div>
         `;
+    autocompleteResults.innerHTML = "";
+    searchInput.value = `${movie.title}`;
   }
 });
