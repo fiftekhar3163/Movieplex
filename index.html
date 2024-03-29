@@ -27,8 +27,16 @@
     />
     <link rel="stylesheet" href="./assets/style/index.css" type="text/css" />
   </head>
-  <body>
-    <script src="./assets/script/movies.js"></script>
+  <div class="container">
+    <h1>Movie Search</h1>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Search for a movie...">
+        <button id="searchButton">Search</button>
+    </div>
+    <div id="autocompleteResults" class="autocomplete-results"></div>
+    <div id="movieDetails" class="movie-details"></div>
+</div>
+
     <script src="./assets/script/index.js"></script>
   </body>
 </html>
