@@ -56,6 +56,10 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     });
   }
+  let genres = '';
+  movies.genre.forEach(singleGenre => {
+    genres += `<span>${singleGenre}</span>`;
+  });
   function displayMovieDetails(movie) {
     movieDetails.innerHTML = `
             <div class="movie-details-container">
@@ -64,10 +68,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 </div>
                 <div class="info-container">
                     <h3>${movie.title}</h3>
-                    <p><strong>Year:</strong> ${movie.year}</p>
-                    <p><strong>Running Time:</strong> ${movie.runningTime}</p>
-                    <p><strong>Description:</strong> ${movie.description}</p>
-                    <p><strong>Genre:</strong> ${movie.genre.join(", ")}</p>
+                    <p class="year-duration"> 
+                  <span>${movie.year}</span> | <span>${movie.runningTime}</span>
+                  </p>
+                    <p class="description"> ${movie.description}</p>
+                    <p class="genres flex"> ${genres}</p>
                 </div>
             </div>
         `;

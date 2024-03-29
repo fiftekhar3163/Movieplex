@@ -25,7 +25,7 @@ h2 {
   margin-bottom: 5rem;
   color: #fff;
   text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 10px #00736e, 0 0 15px #0073e6,
-    0 0 15px #0073e6;
+    0 0 15px #007fe6;
   font-family: "Merriweather", serif;
 }
 
@@ -72,4 +72,26 @@ input[type="text"] {
   max-width: 200px;
   float: left;
   margin-right: 20px;
+}
+
+.release-duration,
+.genres {
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+}
+
+.description {
+  margin-top: 20px;
+}
+
+.genres {
+  gap: 0.8rem;
+  margin-top: 30px;
+}
+
+.genres span {
+  padding: 3px 15px;
+  background-color: rgb(255 255 255 / 0.05);
+  border: 0.5px solid rgb(255 255 255 / 0.15);
+  border-radius: 50px;
 }
