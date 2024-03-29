@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <img src="${movie.poster}" alt="${movie.title} Poster">
                 </div>
                 <div class="info-container">
-                    <h2>${movie.title}</h2>
+                    <h3>${movie.title}</h3>
                     <p><strong>Year:</strong> ${movie.year}</p>
                     <p><strong>Running Time:</strong> ${movie.runningTime}</p>
                     <p><strong>Description:</strong> ${movie.description}</p>
