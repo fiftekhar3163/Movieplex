@@ -56,11 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
       );
     });
   }
-  let genres = '';
-  movies.genre.forEach(singleGenre => {
-    genres += `<span>${singleGenre}</span>`;
-  });
   function displayMovieDetails(movie) {
+    let genres = '';
+    movie.genre.forEach(singleGenre => {
+      genres += `<span>${singleGenre}</span>`;
+    });
     movieDetails.innerHTML = `
             <div class="movie-details-container">
                 <div class="poster-container">
@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <div class="info-container">
                     <h3>${movie.title}</h3>
                     <p class="year-duration"> 
-                  <span>${movie.year}</span> | <span>${movie.runningTime}</span>
+                  <span>${movie.year}</span>    <i class="fa-solid fa-circle fa-beat fa-2xs" style="color: #0213f7;"> </i>    <span>${movie.runningTime}</span>
                   </p>
                     <p class="description"> ${movie.description}</p>
                     <p class="genres flex"> ${genres}</p>
